@@ -23,8 +23,8 @@
 
 ## Tested Apps
 
-App Name | Version | Status
-:---|:---:|:---:|:---
+App Name | Version | Working
+:---|:---:|:---:
 Beat Saber - Demo | 0.12.2 | Testing
 I Expect You to Die | 1.1.174681 | Testing
 SUPERHOT VR | 1.152 | Testing
