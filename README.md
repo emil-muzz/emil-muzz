@@ -13,7 +13,7 @@ Note that some applications may still fail to launch or display entitlement erro
 ## Getting Quest APKs
 1. Login to [Oculus](https://secure.oculus.com/) from a browser 
 2. Open a new tab to [OculusDB](https://oculusdb.rui2015.me) 
-3. Search OculusDB for apps in your Oculus Library that you own
+3. Search OculusDB for apps in your Oculus Library
 4. Select 'Details' for the desired app search result
 5. Scroll down to the 'Connected' section and select 'Versions'
 6. Click 'Download' on the app version desired
@@ -29,8 +29,15 @@ Note that some applications may still fail to launch or display entitlement erro
 App Name | Version | Status | Notes
 :---|:---:|:---:|:---
 Beat Saber - Demo | 0.12.2 | :red_circle: | [BeepSaver](https://github.com/NeoSpark314/BeepSaber) is a good alternative.
+Bait | 1.13.137059 | Testing
+Echo VR | 4987350 | Testing
+First Contact | 1.12 | Testing
+First Steps | 1.0 | Testing
 Harvest VR | 0.1.4 | :green_circle:
 I Expect You to Die | 1.1.174681 | :red_circle:
+Netflix | 1.2 build 147 | Testing
+Pavlov Shack Beta | 1.0 | Testing
+Rec Room | 20220415 | Testing
 SUPERHOT VR | 1.152 | :red_circle:
 SUPERHOT VR - Demo | 1.48 | :green_circle:
 Tribe XR | 0.09.8.5 | :red_circle:
