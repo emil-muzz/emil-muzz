@@ -25,7 +25,6 @@
 
 App Name | Version | Functional | Notes
 :---|:---:|:---:|:---
-
 Beat Saber - Demo | 0.12.2 | Testing
 I Expect You to Die | 1.1.174681 | Testing
 SUPERHOT VR | 1.152 | Testing
