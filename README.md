@@ -1,11 +1,13 @@
 # Oculus Quest Freedom
+One of the drawbacks to disconnecting your Quest 2 from FB is losing access to applications from your Oculus library. 
+This page documents my success using OculusDB (and an Oculus login) to legitimately obtain APKs for Oculus and AppLab applications.
+Note that many Oculus apps will still fail to lauch due to provisioning errors.
 
 ## Requirements: 
-* Oculus Developer Account https://developer.oculus.com
-* Development Mode Enabled via Occulus Mobile App
-* SideQuest https://sidequestvr.com
-* Oculess https://github.com/basti564/Oculess
-
+* Oculus Developer Account (to enable Developer mode) https://developer.oculus.com
+* Development Mode Enabled (via Occulus Mobile App)
+* SideQuest (to sideload APKs) https://sidequestvr.com
+* Oculess (to remove FB) https://github.com/basti564/Oculess
 
 ## Getting Quest APKs
 1. Login to Oculus from a browser https://secure.oculus.com/
@@ -14,11 +16,11 @@
 4. Select 'Details' for the desired app search result
 5. Scroll down to the 'Connected' section and select 'Versions'
 6. Click 'Download' on the app version desired
+7. Install the APK using SideQuest
 
-
-* If you are not logged into Oculus download links will likely fail.
-* If do not have the app in your Oculus Library download links will likely fail.
-* Some applications will fail to launch due to provisioning errors.
+* _If you are not logged into Oculus download links will likely fail._
+* _If do not have the app in your Oculus Library download links will likely fail._
+* _Some applications will fail to launch due to provisioning errors._
 
 
 ## Tested Apps
