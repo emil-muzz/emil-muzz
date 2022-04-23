@@ -1,7 +1,7 @@
 # Oculus Quest Freedom
 One of the drawbacks to disconnecting your Quest 2 from FB is losing access to applications from your Oculus library. 
 This page documents my success using OculusDB (and an Oculus login) to legitimately obtain APKs for Oculus and AppLab applications.
-Note that many Oculus apps will still fail to lauch due to provisioning errors.
+Note that some applications may fail to launch or display to entitlement errors.
 
 ## Requirements: 
 * Oculus Developer Account (to enable Developer mode) https://developer.oculus.com
@@ -20,19 +20,19 @@ Note that many Oculus apps will still fail to lauch due to provisioning errors.
 
 * _If you are not logged into Oculus download links will likely fail._
 * _If do not have the app in your Oculus Library download links will likely fail._
-* _Some applications will fail to launch due to provisioning errors._
+* _Some applications may fail to launch or display to entitlement errors._
 
 
 ## Tested Apps
 
-App Name | Version | Status
-:---|:---:|:---:
-Beat Saber - Demo | 0.12.2 | Testing
-Harvest VR | 0.1.4 | Testing
-I Expect You to Die | 1.1.174681 | Testing
-SUPERHOT VR | 1.152 | Testing
-SUPERHOT VR - Demo | 1.48 | Testing
-Tribe XR | 0.09.8.5 | Testing
+App Name | Version | Status | Notes
+:---|:---:|:---:|:---
+Beat Saber - Demo | 0.12.2 | :red_circle: | [BeepSaver](https://github.com/NeoSpark314/BeepSaber) is a good alternative.
+Harvest VR | 0.1.4 | :green_circle:
+I Expect You to Die | 1.1.174681 | :red_circle:
+SUPERHOT VR | 1.152 | :red_circle:
+SUPERHOT VR - Demo | 1.48 | :green_circle:
+Tribe XR | 0.09.8.5 | :red_circle:
 YouTube VR | 1.38.64 | :green_circle:
 
 
