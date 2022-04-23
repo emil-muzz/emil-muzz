@@ -23,7 +23,7 @@
 
 ## Tested Apps
 
-App Name | Version | Working
+App Name | Version | Status
 :---|:---:|:---:
 Beat Saber - Demo | 0.12.2 | Testing
 I Expect You to Die | 1.1.174681 | Testing
