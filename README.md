@@ -28,6 +28,7 @@ Note that many Oculus apps will still fail to lauch due to provisioning errors.
 App Name | Version | Status
 :---|:---:|:---:
 Beat Saber - Demo | 0.12.2 | Testing
+Harvest VR | 0.1.4 | Testing
 I Expect You to Die | 1.1.174681 | Testing
 SUPERHOT VR | 1.152 | Testing
 SUPERHOT VR - Demo | 1.48 | Testing
