@@ -1,26 +1,27 @@
 # Oculus Quest Freedom
-One of the drawbacks to disconnecting your Quest 2 from FB is losing access to applications from your Oculus library. 
-This page documents my success using OculusDB (and an Oculus login) to legitimately obtain APKs for Oculus and AppLab applications.
-Note that some applications may fail to launch or display to entitlement errors.
+One of the drawbacks to disconnecting a Quest 2 from FB is losing access to applications from your Oculus App Library. 
+This page documents a process to legitimately obtain APKs for Oculus & AppLab apps, and my results testing various apps.
+
+Note that some applications may still fail to launch or display entitlement errors.
 
 ## Requirements: 
-* Oculus Developer Account (to enable Developer mode) https://developer.oculus.com
+* Oculus [Developer Account](https://developer.oculus.com) to unlock Developer mode
 * Development Mode Enabled (via Occulus Mobile App)
-* SideQuest (to sideload APKs) https://sidequestvr.com
-* Oculess (to remove FB) https://github.com/basti564/Oculess
+* [SideQuest](https://sidequestvr.com) to sideload APKs
+* [Oculess](https://github.com/basti564/Oculess) to unlink FB 
 
 ## Getting Quest APKs
-1. Login to Oculus from a browser https://secure.oculus.com/
-2. Open a new tab to OculusDB https://oculusdb.rui2015.me
-3. Search OculusDB for apps in your Oculus Library (THAT YOU OWN)
+1. Login to [Oculus](https://secure.oculus.com/) from a browser 
+2. Open a new tab to [OculusDB](https://oculusdb.rui2015.me) 
+3. Search OculusDB for apps in your Oculus Library that you own
 4. Select 'Details' for the desired app search result
 5. Scroll down to the 'Connected' section and select 'Versions'
 6. Click 'Download' on the app version desired
 7. Install the APK using SideQuest
 
-* _If you are not logged into Oculus download links will likely fail._
-* _If do not have the app in your Oculus Library download links will likely fail._
-* _Some applications may fail to launch or display to entitlement errors._
+* _If you are not logged into Oculus, download links will likely fail._
+* _If do not have the app in your Oculus Library, download links will likely fail._
+* _Some applications may still fail to launch or display entitlement errors._
 
 
 ## Tested Apps
