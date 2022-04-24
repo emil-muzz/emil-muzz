@@ -28,8 +28,10 @@ Note that some applications may still fail to launch or display entitlement erro
 
 App Name | Version | Status | Notes
 :---|:---:|:---:|:---
+Ancient Dungeon Beta | b0.9.1 | Testing
 Beat Saber - Demo | 0.12.2 | :red_circle: | [BeepSaver](https://github.com/NeoSpark314/BeepSaber) is a good alternative.
 Bait | 1.13.137059 | :red_circle:
+Battle Talent | 2.0 | Testing
 Echo VR | 4987350 | :red_circle:
 First Contact | 1.12 | :red_circle:
 First Steps | 1.0 | :green_circle:
@@ -38,9 +40,12 @@ I Expect You to Die | 1.1.174681 | :red_circle:
 Netflix | 1.2 build 147 | :green_circle:
 Pavlov Shack Beta | 1.0 | :red_circle:
 Rec Room | 20220415 | :red_circle:
+SAIL - PreAlpha Demo | 0.0.34 | Testing
 SUPERHOT VR | 1.152 | :red_circle:
 SUPERHOT VR - Demo | 1.48 | :green_circle:
+Tea For God - Demo | 0.6.3 | Testing
 Tribe XR | 0.09.8.5 | :red_circle:
+V-Speedway | 1.1.0 | Testing
 YouTube VR | 1.38.64 | :green_circle:
 
 
