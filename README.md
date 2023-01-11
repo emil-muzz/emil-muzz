@@ -8,7 +8,7 @@ Prior to FB allowing accounts other than a FB account onto the Quest Store, it w
 
 
 
-This page has moved here: 
+This page has moved here: [https://github.com/emil-muzz/emil-muzz/blob/main/quest-freedom](https://github.com/emil-muzz/emil-muzz/blob/main/quest-freedom)
 
 
 
