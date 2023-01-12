@@ -1,4 +1,4 @@
-# Holo / SteamDeck Tricks and Tips
+# SteamOS/SteamDeck Tricks and Tips
 
 
 ### Installing SteamOS (holo) on a Desktop PC 
