@@ -11,7 +11,8 @@ https://github.com/emil-muzz/emil-muzz/blob/main/steamos-tricks.md
 &nbsp;
 
 ## Oculus Quest Freedom
-Prior to FB allowing accounts other than a FB account onto the Quest Store, it was (and still is) possible to disable FB tracking. This was (and may still be) at the cost of losing access to applications from your Oculus App Library. 
+Prior to FB allowing accounts other than a FB account onto the Quest Store, it was (and still is) possible to disable FB tracking. 
+This was (and may still be) at the cost of losing access to applications from your Oculus App Library. 
 
 https://github.com/emil-muzz/emil-muzz/blob/main/quest-freedom.md
 
