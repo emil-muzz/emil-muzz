@@ -12,17 +12,22 @@ For reference this is my build:
 * AMD Radeon RX 6600 @ 8GB VRAM
 * NetGear A6100 USB WiFi
 
+&nbsp;
+
 For this guide I am using HoloISO Update 4.0 (Dec 11, 2022)
 
 1. Write the image to a USB drive as instructed.
 2. Boot the USB drive and install to the desired drive.
 3. If you have a dkms driver to install, do it before restarting (see below).
 
-Nearly all user data is isolated to the /home partition, so it is possible to re-install without loosing much of anything. The HoloISO install script will detect if an existing /home partition exists and prompt if you would like to keep it or not.
+Nearly all user data is isolated to the /home partition, so it is possible to re-install without loosing much of anything. 
+The HoloISO install script will detect if an existing /home partition exists and prompt if you would like to keep it or not.
 
+&nbsp;
 
 ### Adding a WiFi driver (dkms)
-In this case a Netgear A6100 USB WiFi adapter with [this driver](https://github.com/morrownr/8821cu-20210118), but this should also apply to dkms drivers for other devices.
+In this case a Netgear A6100 USB WiFi adapter with [this driver](https://github.com/morrownr/8821cu-20210118).
+But this should also apply to dkms drivers for other devices.
 
 I had a spare wifi router I configured as a WiFi to Ethernet bridge to download the source file archive from github. 
 This may also be possible with the source file archive on a second USB drive.
@@ -48,7 +53,34 @@ cleaning build area...
 ```
 3. Reboot!
 
+&nbsp;
+
 ### Updating HoloISO
+
+1. Once the new Holo installation is booted, walk through the OOBE, sign-in and connect to wifi.
+2. It seems like the pacman.conf file is out of date or deliberately disables the standard repositories.
+(This appears to be corrected after upgrading holoiso in #3)
+```
+sudo vim /etc/pacman.conf 
+
+# Comment out all the repo entries except holoiso-stable and holoisostaging
+[holoiso-stable]
+Include = /etc/pacman.d/holo_mirrorlist
+SigLevel = Never
+
+[holostaging]
+Include = /etc/pacman.d/holo_mirrorlist
+SigLevel = Never
+```
+3. Update HoloISO
+```
+# Update repos and packages
+(deck@holoiso ~)$ sudo pacman -Syyu
+```
+4. Reboot
+
+&nbsp;
+
 
 ### HoloISO Hotfix
 
