@@ -99,3 +99,11 @@ BioShock Remastered (2K Launcher Bypass)
 ```
 eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'/Build\/Final\/BioshockHD.exe'/" ) 
 ```
+BioShock 2 Remastered
+```
+eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'/Build\/Final\/Bioshock2HD.exe'/" )
+```
+BioShock Infinte
+```
+eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'/Binaries\/Win32\/BioShockInfinite.exe'/" )
+```
