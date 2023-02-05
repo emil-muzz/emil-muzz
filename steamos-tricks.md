@@ -93,3 +93,9 @@ SigLevel = Never
 ### DVD Ripping
 
 ### VLC Hardware Decoding
+
+### Game Command Lines
+BioShock Remastered (2K Launcher Bypass) 
+```
+eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'/Build\/Final\/BioshockHD.exe'/" ) 
+```
