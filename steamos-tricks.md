@@ -81,18 +81,69 @@ SigLevel = Never
 
 &nbsp;
 
+### Swap Space / CryoByte Utilities
 
-### HoloISO Hotfix
+I used the [ArchWiki documentation](https://wiki.archlinux.org/title/Swap) to create and mount a 16G swapfile (/home/deck/.swapfile), then used [CryoByte33's Steam Deck Utilties](https://github.com/CryoByte33/steam-deck-utilities) scripts to set swappiness to 1, enabled Huge Pages, Shared Memory in THP, Compation Proactiveness, Huge Page Defragmentation, and Page Lock Unfairness. 
+
+The storage scripts can also be very helpful in nudging up performance and freeing up storage space. 
+
+&nbsp;
 
 ### Game Backup/Restore
+Everyone has their own approach to library management. I previously (on Windows) used Steam's backup/restore function and stored backups on removable hard drives (WD Passport). I ran into problems restoring backups made in Windows to my holo install, but that may no longer be an issue. (Things in this area are improving, largely due to the popularity of the Steam Deck. Steam's backup/restore feature hasn't really evolved since it's release.)
+
+After sampling a few of the backup utilities offered in Discover, most of them appear to be a frontend or implimentation of [borg backup](https://www.borgbackup.org). While this offered compression, 'deleted' files not freeing disk space and clunky methods of manipulating files put me off continuing down this path.
+
+My current solution is to use the removable hard drives as additional steam library folders, similar to SD cards on the Steamn Deck. It does make keeping games updated easier, at the cost of no compression. I still manually copy game folders from the removable drive to the library folder on my SSD, then (with the drive/library removed) install the game to the SSD and let Steam discover the existing game files. 
+
+&nbsp;
 
 ### ProtonGE
+(Haven't really had a use for it yet.)
+
+&nbsp;
 
 ### Bottles
+Wine frontend that can be useful for running windows apps (Doxie scanner software tested ok.)
+
+&nbsp;
 
 ### DVD Ripping
+I am still moving a sizable DVD library onto a NAS for playback over Roku media player. (More on that later.) For DVD ripping I use some fairly common tools and encode to HandBrake's official Matroska H.265 MKV 480p30 profile. You'll need to install the following with pacman: 
+* dvdbackup
+* libdvdcss
+* cdrtools
+
+&nbsp;
+
+#### Read DVD 
+```
+dvdbackup -i /dev/sr0 -I
+```
+#### Rip DVD
+```
+dvdbackup -i /dev/sr0 -o /home/deck/dvd/ -M
+```
+#### Create ISO
+```
+mkisofs -dvd-video -udf -o /home/deck/dvd/moviename.iso /home/deck/dvd/moviename
+```
+###
+Open the ISO with HandBrake and encode!
+
+&nbsp;
 
 ### VLC Hardware Decoding
+VLC (FlatPak) had trouble with playing back mkv files correctly out of box. Changing the hardware accelerated decoding method to VDPAU video decoder solved this problem for me. 
+
+### Audio Video Library Management
+Movies, TV Shows, and Music are stored on a standalone NAS and shared across the local LAN.  
+The NAS is a DIY project made possible by OpenMediaVault, RockPi4, 4x SATA board, and ~8 TB of HDDs.
+(ToDo: Document the NAS someday.)
+
+To manage video naming, covers, and information (all displayed on Roku media player natively) I am using [tinyMediaManager](https://www.tinymediamanager.org/). It will complain about missing libmediainfo, you can install it via pacman.
+
+&nbsp;
 
 ### Game Command Lines
 BioShock Remastered (2K Launcher Bypass) 
@@ -106,4 +157,9 @@ eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'/Build\/Final\
 BioShock Infinte
 ```
 eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'/Binaries\/Win32\/BioShockInfinite.exe'/" )
+```
+Fallout New Vegas (NVSE Launcher)
+(ToDo: A guide on how I got TTW working.)
+```
+eval $( echo "%command%" | sed "s/FalloutNVLauncher.exe'/nvse_loader.exe'/" )
 ```
