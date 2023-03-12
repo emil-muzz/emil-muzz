@@ -128,8 +128,7 @@ dvdbackup -i /dev/sr0 -o /home/deck/dvd/ -M
 ```
 mkisofs -dvd-video -udf -o /home/deck/dvd/moviename.iso /home/deck/dvd/moviename
 ```
-###
-Open the ISO with HandBrake and encode!
+### Open the ISO with HandBrake and encode!
 
 &nbsp;
 
@@ -142,6 +141,31 @@ The NAS is a DIY project made possible by OpenMediaVault, RockPi4, 4x SATA board
 (ToDo: Document the NAS someday.)
 
 To manage video naming, covers, and information (all displayed on Roku media player natively) I am using [tinyMediaManager](https://www.tinymediamanager.org/). It will complain about missing libmediainfo, you can install it via pacman.
+
+&nbsp;
+
+### Mounting network (smb) shares
+Again pointing to the [ArchWiki documentation](https://wiki.archlinux.org/title/Samba) on samba. 
+
+Setup file based credentials (owned by root)
+```
+sudo mkdir -p /etc/samba/credentials/
+```
+Contents of /etc/samba/credentials/share:
+```
+username=myuser
+password=mypass
+```
+The credential file should explicitly readable/writeable to root:
+```
+sudo chown root:root /etc/samba/credentials
+sudo chmod 700 /etc/samba/credentials
+sudo chmod 600 /etc/samba/credentials/share
+```
+And replace username=myuser,password=mypass with credentials=/etc/samba/credentials/share in the mount command.
+```
+sudo mount --mkdir -t cifs //server/share /run/media/deck/share -o credentials=/etc/samba/credentials/share,workgroup=workgroup,iocharset=utf8,uid=username,gid=group
+```
 
 &nbsp;
 
