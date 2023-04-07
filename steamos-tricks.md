@@ -131,7 +131,7 @@ mkisofs -dvd-video -udf -o /home/deck/dvd/moviename.iso /home/deck/dvd/moviename
 ```
 ### Open the ISO with HandBrake and encode!
 
-### I have also had luck with the flatpak version of MakeMKV, then re-encode to H.265 @ 480p
+(I have also had luck with the flatpak version of MakeMKV, then re-encode to H.265 @ 480p)
 
 &nbsp;
 
