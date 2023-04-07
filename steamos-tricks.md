@@ -99,7 +99,8 @@ My current solution is to use the removable hard drives as additional steam libr
 &nbsp;
 
 ### ProtonGE
-(Haven't really had a use for it yet.)
+Get ProtonUp-QT from Discover to install it. 
+Used it in combination with Heroic to get the EGS version of XCom2 running (see below).
 
 &nbsp;
 
