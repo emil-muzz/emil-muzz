@@ -130,6 +130,8 @@ mkisofs -dvd-video -udf -o /home/deck/dvd/moviename.iso /home/deck/dvd/moviename
 ```
 ### Open the ISO with HandBrake and encode!
 
+### I have also had luck with the flatpak version of MakeMKV, then re-encode to H.265 @ 480p
+
 &nbsp;
 
 ### VLC Hardware Decoding
@@ -187,3 +189,12 @@ Fallout New Vegas (NVSE Launcher)
 ```
 eval $( echo "%command%" | sed "s/FalloutNVLauncher.exe'/nvse_loader.exe'/" )
 ```
+
+### Epic Games Store
+XCOM 2 - Using Heroic, GE-Proton7-54, 
+Skip laucher with alternate EXE to run: 
+```
+/home/deck/Games/Heroic/XCOM2/Binaries/Win64/XCom2.exe
+```
+To fix not being able to move characters, use Heroic's 'Run EXE on Prefix' and execute /home/deck/Games/Heroic/XCOM2/Binaries/PreReqRedist/vcredist_x64.exe
+
