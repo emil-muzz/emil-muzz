@@ -81,6 +81,21 @@ SigLevel = Never
 
 &nbsp;
 
+### Sound Stutter Fix
+
+A solution to the audio cutting out, although I cannot find the source now.
+'deck' is the user running pipewire (ps axu | grep pipewire)
+```
+sudo pacman -S realtime-privileges rtkit
+sudo systemctl enable --now rtkit-daemon
+sudo gpasswd -a deck rtkit 
+sudo gpasswd -a deck realtime
+reboot
+```
+
+
+&nbsp;
+
 ### Swap Space / CryoByte Utilities
 
 I used the [ArchWiki documentation](https://wiki.archlinux.org/title/Swap) to create and mount a 16G swapfile (/home/deck/.swapfile), then used [CryoByte33's Steam Deck Utilties](https://github.com/CryoByte33/steam-deck-utilities) scripts to set swappiness to 1, enabled Huge Pages, Shared Memory in THP, Compation Proactiveness, Huge Page Defragmentation, and Page Lock Unfairness. 
