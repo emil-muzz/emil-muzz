@@ -204,6 +204,10 @@ Cyberpunk 2077
 ```
 --launcher-skip -skipStartScreen
 ```
+Dishonored 2
+```
++com_showLoadingScreen 0
+```
 Fallout New Vegas (NVSE Launcher)
 (ToDo: A guide on how I got TTW working.)
 ```
