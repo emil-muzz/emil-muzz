@@ -200,6 +200,10 @@ BioShock Infinte
 ```
 eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'/Binaries\/Win32\/BioShockInfinite.exe'/" )
 ```
+Cyberpunk 2077
+```
+--launcher-skip -skipStartScreen
+```
 Fallout New Vegas (NVSE Launcher)
 (ToDo: A guide on how I got TTW working.)
 ```
