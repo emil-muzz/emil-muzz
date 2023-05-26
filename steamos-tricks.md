@@ -188,27 +188,27 @@ sudo mount --mkdir -t cifs //server/share /run/media/deck/share -o credentials=/
 &nbsp;
 
 ### Game Command Lines
-BioShock Remastered (2K Launcher Bypass) 
+BioShock Remastered (Launcher Bypass)
 ```
 eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'/Build\/Final\/BioshockHD.exe'/" ) 
 ```
-BioShock 2 Remastered
+BioShock 2 Remastered (Launcher Bypass)
 ```
 eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'/Build\/Final\/Bioshock2HD.exe'/" )
 ```
-BioShock Infinte
+BioShock Infinte (Launcher Bypass)
 ```
 eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'/Binaries\/Win32\/BioShockInfinite.exe'/" )
 ```
-Cyberpunk 2077
+Cyberpunk 2077 (Launcher Bypass, Skip Start Screen)
 ```
 --launcher-skip -skipStartScreen
 ```
-Dishonored 2
+Dishonored 2  (Skip Intro Movies)
 ```
 +com_showLoadingScreen 0
 ```
-Fallout 4
+Fallout 4 (Launcher Bypass)
 ```
 eval $( echo "%command%" | sed "s/Fallout4Launcher.exe'/Fallout4.exe'/" )
 ```
