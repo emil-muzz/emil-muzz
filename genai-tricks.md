@@ -1,19 +1,35 @@
 # Local Generative AI - Text and Image
+_You want Jarvis? We have Jarvis at home._
 
-## LLAMAFILE
+_I've leveled up far enough in life that I remember running ELIZA on an Apple II for the first time, and being fascinated with concept of a communicating with an artificial intelligence. Mix in a steady consumption of science fiction novels, television, and movies, and it's somewhat surprising that I didn't immediately experiment with recent attempts at AI._
 
-TODO: Give some love to [Justine](https://justine.lol) and their work on [llamafile](https://github.com/Mozilla-Ocho/llamafile) which got me started down this path.
+_Analyzing the why is a philosophical discussion, but a practical reason was ease of use. Like Skyrim or New Vegas modding, tools to make the process simpler and get to playing make tinkering and experimenting much easier._
 
-If you want something simple to experiment with check out: [Bash One-Liners for LLMs](https://justine.lol/oneliners/)
+## One-Liners and llamafile
 
-## HARDWARE
+Due credit to this [hackaday article](https://hackaday.com/2023/12/29/using-local-ai-on-the-command-line-to-rename-images-and-more/) :pirate_flag: for my initial discovery of Justine Tunny's [Bash One-Liners for LLMs](https://justine.lol/oneliners/) and Mozilla's [llamafile](https://github.com/Mozilla-Ocho/llamafile) project.
+
+If you want to download a few files, run a relatively simple command-line instruction, and get a generative AI model to do something, it's a great way to get started. As an example, here's how to ask the LLaVA model what it sees in an image:
+
+``
+llava-v1.5-7b-q4.llamafile --cli \
+    --image lemurs.jpg --temp 0 \
+    -e -p '### User: What do you see?\n### Assistant:' \
+    --silent-prompt 2>/dev/null
+``
+
+## Hardware
 
 My CPU/GPU is no powerhouse, I'd say it is compariable to a SteamDeck in specs:
 
-- SteamOS 3.4 via HoloISO (holoiso-staging build 1.1)
--	AMD Radeon RX 6600 @ 8GB VRAM
--	Intel Core i3-9100F @ 3.60 GHz
--	Corsair Vengeance LPX DDR4 @ 16 GB
+- SteamOS via HoloISO Immutable
+- AMD Radeon RX 6600 @ 8GB VRAM
+- Intel Core i3-9100F @ 3.60 GHz
+- Corsair Vengeance LPX DDR4 @ 16 GB
+
+Even with these limited specs I can run a 7b text-completion model and a Stable Diffusion 1.5 model simultaneously, and see generated responses within a minute or less in most cases.
+
+:warning: _The immutable version of HoloISO makes most of the filesystems read-only, which makes installing build packages and compiling from source challenging. My (inelegant) solution is to run everything in an arch chroot jail. Archlinux-bootstrap raises what can grow into a significant storage requirement if you experiment with a number of models. If you're going to try this with a Steam Deck, I advise you do similar from an SD card._
 
  ## API
  
@@ -22,13 +38,9 @@ My CPU/GPU is no powerhouse, I'd say it is compariable to a SteamDeck in specs:
 
 TODO: Update to include information on running SD with OH at the same time.
 
- ## MODEL
- 
- This guide is written specifically for the OpenHermes-2.5-Mistral-7B model:
- 	https://huggingface.co/teknium/OpenHermes-2.5-Mistral-7B
-	https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF
+ ## MODELS
 
- TODO: Update to include information on running a SD safetensor with mistral at the same time.
+TODO: Provide example models, and summary output from each using the same prompt.
 
  ## Stable Diffusion (Dreamshaper)
 
@@ -43,7 +55,7 @@ TODO: Update to include information on running SD with OH at the same time.
  
  ## PROMPT FORMAT
  
- OpenHermes uses the ChatML prompt format:
+ ChatML prompt format:
  	<|im_start|>system 
  	Provide some context and/or instructions to the model.
  	<|im_end|> 
@@ -103,6 +115,6 @@ Genre is a category or type of artistic work, such as literature, film, or game,
 
 Tags are more specific keywords or topics that provide more detailed information about the content.
 
-# PROMPTS
+## PROMPTS
 
 .. to be continued.
