@@ -1,4 +1,6 @@
-# Emil's Random Repository
+# Emil Muzz's Random Repository
+Yeah, that's right. That's me. Muzz, Emil. Emil Muzz.
+
 &nbsp;
 
 ## Local Generative AI - Text and Image
