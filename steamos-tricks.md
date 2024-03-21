@@ -10,7 +10,7 @@ For reference this is my build:
 * Corsair Vengeance LPX DDR4 @ 16 GB
 * Samsung 980 PCIe 3.0 NVMe SSD @ 1TB
 * AMD Radeon RX 6600 @ 8GB VRAM
-* NetGear A6100 USB WiFi
+* ~~NetGear A6100 USB WiFi~~
 
 &nbsp;
 
