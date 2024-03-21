@@ -4,6 +4,8 @@ A collection of techincal notes and the outcome of experiments.
 &nbsp;
 
 ## SteamOS/SteamDeck Tricks and Tips
+_Updated with warnings and notes when using HoloISO Immutable._
+
 Notes on gettings SteamOS for the Steam Deck (Holo) running on a desktop PC.
 
 https://github.com/emil-muzz/emil-muzz/blob/main/steamos-tricks.md
