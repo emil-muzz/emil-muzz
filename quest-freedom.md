@@ -1,4 +1,11 @@
 # Oculus Quest Freedom
+
+:warning: _Retired, likely out of date._ :warning:
+
+_Sadly my Quest2 has failed and is no longer bootable._
+_I'll keep the information here for reference, but it's out of date._
+
+
 One of the drawbacks to disconnecting a Quest 2 from FB is losing access to applications from your Oculus App Library. 
 This page documents a process to legitimately obtain APKs for Oculus & AppLab apps, and my results testing various apps.
 
