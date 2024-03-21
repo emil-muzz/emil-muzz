@@ -15,7 +15,7 @@ If you want to download a few files, run a relatively simple command-line instru
 llava-v1.5-7b-q4.llamafile --cli --image lemurs.jpg --temp 0 -e -p '### User: What do you see?\n### Assistant:' --silent-prompt 2>/dev/null
 ``
 
-## Hardware
+## Hardware - It's Not Much
 
 My CPU/GPU is no powerhouse, I'd say it is compariable to a SteamDeck in specs:
 
@@ -28,29 +28,47 @@ Even with these limited specs I can run a 7b text-completion model and a Stable 
 
 :warning: _The immutable version of HoloISO makes most of the filesystems read-only, which makes installing build packages and compiling from source challenging. My (inelegant) solution is to run everything in an arch chroot jail. This raises what can grow into a significant storage requirement if you experiment with a number of models. If you're going to try this with a Steam Deck, I advise you do similar from an SD card._
 
- ## API
- 
- My API of choice is koboldcpp, specifically the ROCm (AMD) build by YellowRoseCx:
- 	https://github.com/YellowRoseCx/koboldcpp-rocm
+## API - Running a Model
 
-TODO: Update to include information on running SD with OH at the same time.
+_After playing around with llamafiles and developing an increasingly large directory of text files containing prompts, I dug a little deeper into front-ends that launch a given model and provide and API that requests can be sent to anytime, mostly to eliminate waiting for the model to load every time every time I invoked llamafile._
 
- ## MODELS
+To run a model locally, you'll want a front-end that takes care of loading the model to memory (and optionally to a GPU), and then exposing an API you can use to send generation requests. This is similar to the interactive mode of llamafile, but offers additional functionality.
 
-TODO: Provide example models, and summary output from each using the same prompt.
+I'm using [koboldcpp](https://github.com/LostRuins/koboldcpp) to load and send requests to models. I'm specifically using the the ROCm (AMD) build by [YellowRoseCx](https://github.com/YellowRoseCx/koboldcpp-rocm), since it supports offloading to my AMD RX 6600. _By comparison, generating a response using only the CPU (i3-9100F) takes 3-4x longer than it does with GPU offloading._
 
- ## Stable Diffusion (Dreamshaper)
+:warning: _Due to some creative challenges thanks to HoloISO Immutable, installing the required dependencies and compiling from source while in a chroot jail is worthy of it's own guide that I might add later. Binary versions for most platforms are available on the releases page, but may have their own dependencies._
+
+Recently koboldcpp added support for loading both a text-generation model, and a Stable Diffusion text-to-image model simultaneously. At the moment my command-line to load a Mistral 7b model and the Dreamshaper SD model looks something like this:
+
+``
+python /home/deck/koboldcpp-rocm/koboldcpp.py --threads 3 --blasthreads 3 --usecublas mmq lowvram --gpulayers 29 --blasbatchsize 256 --contextsize 8192 --quiet --model /home/deck/models/mistral-7b-instruct-v0.2.Q5_K_M.gguf --sdconfig /home/deck/models/dreamshaper_8_pruned.safetensors quant
+``
+
+ ## Models - Under the Hood
+
+There are countless [models](https://huggingface.co/models?pipeline_tag=text-generation&library=gguf) available for download on [HuggingFace](https://huggingface.co). At first it can be intimidating to figure out which model to try, what version of it to download, and what to expect from it.
+
+_WIP, sorry. Super short version._
+
+mistral-7b-instruct-v0.2.Q5_K_M.gguf
+
+_Think of the 'b' number (7b) 'size' of model, or page count of a book. The larger the model, the more memory you'll need to run it. I've been using 7b models based on Mistral and LLaMA 2._
+
+_Think of the 'Q' code as the 'depth' of the model, how many pages are devoted to a chapter or topic. Q5_K_M is fairly balanced in my experience._
+
+I'm going to personify models for a moment, because it's helped me contextualize many of the buzzwords thrown around when discussing AI. This advice won't apply to all models, your mileage may vary.
+
+The best way I've been able to think of AI models, and communicating with them is to imagine them as a librarian; my most often used prompt is a characterization of a librarian. A good number of models on HF are based on Mistral or LLaMA 2, and for general use these base models do a pretty great job on their own. 
+
+Some go further and 'train' the model with customized datasets. To extend the librarian analogy, think of trained models as librarians in specialized libraries. Librarians for business, chemistry, computer programming, creative writing, finance, interactive chat, law, medicine, etc.
+
+### Text Generation
+
+### Stable Diffusion 
 
  TODO: Give more details on SD and Dreamshaper
  
- ## STARTUP
- 
- This is the startup command I use with koboldcpp:
- 	python /home/deck/koboldcpp-rocm/koboldcpp.py --threads 3 --blasthreads 3 --usecublas --gpulayers 32 --blasbatchsize 256 --contextsize 8192 --quiet --model /home/deck/models/openhermes-2.5-mistral-7b.Q5_K_M.gguf
- 
- TODO: Update to include information on running SD with OH at the same time.
- 
- ## PROMPT FORMAT
+ ## PROMPT FORMATING
  
  ChatML prompt format:
  	<|im_start|>system 
