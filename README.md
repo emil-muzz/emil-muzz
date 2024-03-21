@@ -1,5 +1,11 @@
 # Emil's Random Repository
-A collection of techincal notes and the outcome of experiments.
+&nbsp;
+
+## Local Generative AI - Text and Image
+
+Notes on running local text (Mistral, LLaMA) and image (Stable Diffusion) generative AI models using Kobold.cpp and SillyTavern. Includes my notes on writing LLM, SD, and ST character prompts.
+
+https://github.com/emil-muzz/emil-muzz/blob/main/genai-tricks.md
 
 &nbsp;
 
