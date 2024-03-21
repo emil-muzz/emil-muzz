@@ -14,7 +14,9 @@ For reference this is my build:
 
 &nbsp;
 
-For this guide I am using HoloISO Update 4.0 (Dec 11, 2022)
+~~For this guide I am using HoloISO Update 4.0 (Dec 11, 2022)~~
+
+:warning: [HoloISO Immutable](https://github.com/holoiso-staging/releases) is now available, but makes some **significant** changes to the system that **breaks** some of the functionality below.
 
 1. Write the image to a USB drive as instructed.
 2. Boot the USB drive and install to the desired drive.
@@ -23,9 +25,13 @@ For this guide I am using HoloISO Update 4.0 (Dec 11, 2022)
 Nearly all user data is isolated to the /home partition, so it is possible to re-install without loosing much of anything. 
 The HoloISO install script will detect if an existing /home partition exists and prompt if you would like to keep it or not.
 
-&nbsp;
-
 ### Adding a WiFi driver (dkms)
+
+:warning: **(simple) DKMS IS BROKEN IN HOLOISO IMMUTABLE** :warning: 
+
+_I'm sure it's possible with some filesystem overlays and a bit of hackery, but I needed a working system, had a workaround, and didn't have the time to figure out how to do it properly._
+_The onboard ethernet **is** supported by the kernel, your mileage may vary. The workaround was to use the spare router as an ethernet to wifi adapter instead of the A6100 USB. Is it efficient? No. Is it convenient? Also No. But it works._
+
 In this case a Netgear A6100 USB WiFi adapter with [this driver](https://github.com/morrownr/8821cu-20210118).
 But this should also apply to dkms drivers for other devices.
 
@@ -57,6 +63,8 @@ cleaning build area...
 
 ### Updating HoloISO
 
+:warning: _TODO: Update for HoloISO Immutable. Steam updates apply like they do on the Steam Deck. Discover can still update (some) packages. Will have to wait for another HoloISO release to see what the upgrade path is like._
+
 1. Once the new Holo installation is booted, walk through the OOBE, sign-in and connect to wifi.
 2. It seems like the pacman.conf file is out of date or deliberately disables the standard repositories.
 (This appears to be corrected after upgrading holoiso in #3)
@@ -83,6 +91,8 @@ SigLevel = Never
 
 ### Sound Stutter Fix
 
+:warning: _TODO: Update for HoloISO Immutable. I haven't noticed this re-occurring, the only audio glitch I've experienced is an inital delay when audio starts playing verses when it's audible from the speakers. This may have something to do with HDMI or my built-in speakers._
+
 A solution to the audio cutting out, although I cannot find the source now.
 'deck' is the user running pipewire (ps axu | grep pipewire)
 ```
@@ -98,6 +108,8 @@ reboot
 
 ### Swap Space / CryoByte Utilities
 
+:warning: _TODO: Update for HoloISO Immutable. I didn't have any trouble running CyroByte Utilities, applying recommended settings, or enabling swap after installing immutable._
+
 I used the [ArchWiki documentation](https://wiki.archlinux.org/title/Swap) to create and mount a 16G swapfile (/home/deck/.swapfile), then used [CryoByte33's Steam Deck Utilties](https://github.com/CryoByte33/steam-deck-utilities) scripts to set swappiness to 1, enabled Huge Pages, Shared Memory in THP, Compation Proactiveness, Huge Page Defragmentation, and Page Lock Unfairness. 
 
 The storage scripts can also be very helpful in nudging up performance and freeing up storage space. 
@@ -105,26 +117,33 @@ The storage scripts can also be very helpful in nudging up performance and freei
 &nbsp;
 
 ### Game Backup/Restore
-Everyone has their own approach to library management. I previously (on Windows) used Steam's backup/restore function and stored backups on removable hard drives (WD Passport). I ran into problems restoring backups made in Windows to my holo install, but that may no longer be an issue. (Things in this area are improving, largely due to the popularity of the Steam Deck. Steam's backup/restore feature hasn't really evolved since it's release.)
 
-After sampling a few of the backup utilities offered in Discover, most of them appear to be a frontend or implimentation of [borg backup](https://www.borgbackup.org). While this offered compression, 'deleted' files not freeing disk space and clunky methods of manipulating files put me off continuing down this path.
+Everyone has their own approach to library management. I previously (on Windows) used Steam's backup/restore function and stored backups on removable hard drives (WD Passport). I ran into problems restoring backups made in Windows to my holo install, but that may no longer be an issue. (Things in this area are improving, largely due to the popularity of the Steam Deck. ~~Steam's backup/restore feature hasn't really evolved since it's release.~~) _Improvement has been made on Steam's backup functionality (goodbye fixed CD/DVD sizes) and being able to pull from other Steam libraries over local wifi is very helpful._
 
-My current solution is to use the removable hard drives as additional steam library folders, similar to SD cards on the Steamn Deck. It does make keeping games updated easier, at the cost of no compression. I still manually copy game folders from the removable drive to the library folder on my SSD, then (with the drive/library removed) install the game to the SSD and let Steam discover the existing game files. 
+I still use the removable hard drives as additional steam library folders, similar to SD cards on the Steamn Deck. It does make keeping games updated easier, at the cost of no compression. I still manually copy game folders from the removable drive to the library folder on my SSD, then (with the drive/library removed) install the game to the SSD and let Steam discover the existing game files. 
 
 &nbsp;
 
 ### ProtonGE
+
+:warning: _ProtonUp-QT and ProtonGE still work fine in immutable._
+
 Get ProtonUp-QT from Discover to install it. 
 Used it in combination with Heroic to get the EGS version of XCom2 running (see below).
 
 &nbsp;
 
-### Bottles
+### Bottles 
+
+:warning: _TODO: Update for HoloISO Immutable. I haven't had a need to test this in immutable yet, but it should work fine._
+
 Wine frontend that can be useful for running windows apps (Doxie scanner software tested ok.)
 
 &nbsp;
 
 ### DVD Ripping
+:warning: _TODO: Update for HoloISO Immutable. This might be broken with immutable since it depends on local packages. It should be possible to install the packages and run these steps from a chroot jail._
+
 I am still moving a sizable DVD library onto a NAS for playback over Roku media player. (More on that later.) For DVD ripping I use some fairly common tools and encode to HandBrake's official Matroska H.265 MKV 480p30 profile. You'll need to install the following with pacman: 
 * dvdbackup
 * libdvdcss
@@ -163,6 +182,9 @@ To manage video naming, covers, and information (all displayed on Roku media pla
 &nbsp;
 
 ### Mounting network (smb) shares
+
+:warning: _TODO: Update for HoloISO Immutable. This is likely broken with immutable.
+
 Again pointing to the [ArchWiki documentation](https://wiki.archlinux.org/title/Samba) on samba. 
 
 Setup file based credentials (owned by root)
