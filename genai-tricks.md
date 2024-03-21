@@ -19,7 +19,7 @@ llava-v1.5-7b-q4.llamafile --cli --image lemurs.jpg --temp 0 -e -p '### User: Wh
 
 My CPU/GPU is no powerhouse, I'd say it is compariable to a SteamDeck in specs:
 
-- SteamOS via HoloISO Immutable
+- SteamOS via [HoloISO Immutable](https://github.com/HoloISO/holoiso) ([tips and tricks](https://github.com/emil-muzz/emil-muzz/blob/main/steamos-tricks.md))
 - AMD Radeon RX 6600 @ 8GB VRAM
 - Intel Core i3-9100F @ 3.60 GHz
 - Corsair Vengeance LPX DDR4 @ 16 GB
