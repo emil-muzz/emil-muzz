@@ -12,10 +12,7 @@ Due credit to this [hackaday article](https://hackaday.com/2023/12/29/using-loca
 If you want to download a few files, run a relatively simple command-line instruction, and get a generative AI model to do something, it's a great way to get started. As an example, here's how to ask the LLaVA model what it sees in an image:
 
 ``
-llava-v1.5-7b-q4.llamafile --cli \
-    --image lemurs.jpg --temp 0 \
-    -e -p '### User: What do you see?\n### Assistant:' \
-    --silent-prompt 2>/dev/null
+llava-v1.5-7b-q4.llamafile --cli --image lemurs.jpg --temp 0 -e -p '### User: What do you see?\n### Assistant:' --silent-prompt 2>/dev/null
 ``
 
 ## Hardware
@@ -27,9 +24,9 @@ My CPU/GPU is no powerhouse, I'd say it is compariable to a SteamDeck in specs:
 - Intel Core i3-9100F @ 3.60 GHz
 - Corsair Vengeance LPX DDR4 @ 16 GB
 
-Even with these limited specs I can run a 7b text-completion model and a Stable Diffusion 1.5 model simultaneously, and see generated responses within a minute or less in most cases.
+Even with these limited specs I can run a 7b text-completion model and a Stable Diffusion 1.5 model simultaneously, and see generated responses within a minute or less.
 
-:warning: _The immutable version of HoloISO makes most of the filesystems read-only, which makes installing build packages and compiling from source challenging. My (inelegant) solution is to run everything in an arch chroot jail. Archlinux-bootstrap raises what can grow into a significant storage requirement if you experiment with a number of models. If you're going to try this with a Steam Deck, I advise you do similar from an SD card._
+:warning: _The immutable version of HoloISO makes most of the filesystems read-only, which makes installing build packages and compiling from source challenging. My (inelegant) solution is to run everything in an arch chroot jail. This raises what can grow into a significant storage requirement if you experiment with a number of models. If you're going to try this with a Steam Deck, I advise you do similar from an SD card._
 
  ## API
  
