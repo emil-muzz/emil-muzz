@@ -38,10 +38,10 @@ I'm using [koboldcpp](https://github.com/LostRuins/koboldcpp) to load and send r
 
 :warning: _Due to some creative challenges thanks to HoloISO Immutable, installing the required dependencies and compiling from source while in a chroot jail is worthy of it's own guide that I might add later. Binary versions for most platforms are available on the releases page, but may have their own dependencies._
 
-Recently koboldcpp added support for loading both a text-generation model, and a Stable Diffusion text-to-image model simultaneously. At the moment my command-line to load a Mistral 7b model and the Dreamshaper SD model looks something like this:
+Recently koboldcpp added support for loading both a text-generation model, and a Stable Diffusion text-to-image model simultaneously. At the moment my command-line to load Gemma 7b and Dreamshaper SD looks something like this:
 
 ``
-python /home/deck/koboldcpp-rocm/koboldcpp.py --threads 3 --blasthreads 3 --usecublas mmq lowvram --gpulayers 29 --blasbatchsize 256 --contextsize 8192 --quiet --model /home/deck/models/mistral-7b-instruct-v0.2.Q5_K_M.gguf --sdconfig /home/deck/models/dreamshaper_8_pruned.safetensors quant
+python /home/deck/koboldcpp-rocm/koboldcpp.py --threads 4 --blasthreads 4 --usecublas mmq lowvram --gpulayers 18 --blasbatchsize 256 --contextsize 8192 --model /home/deck/models/gemma-7b-it.Q4_K_M-v2.gguf --sdconfig /home/deck/models/dreamshaper_8_pruned.safetensors quant
 ``
 
  ## Models - Under the Hood
@@ -64,10 +64,29 @@ Some go further and 'train' the model with customized datasets. To extend the li
 
 ### Text Generation
 
+To get some kind of data, I'm going to ask my Librarian to answer the antibiotics question:
+```
+Antibiotics question:
+Antibiotics are a type of medication used to treat bacterial infections. They work by either killing the bacteria or preventing them from reproducing, allowing the body’s immune system to fight off the infection. Antibiotics are usually taken orally in the form of pills, capsules, or liquid solutions, or sometimes administered intravenously. They are not effective against viral infections, and using them inappropriately can lead to antibiotic resistance.
+
+Explain the above in one sentence:
+```
+With the character's description and dialog examples, this comes out to 1,125 tokens to process.
+
 ### Stable Diffusion 
 
- TODO: Give more details on SD and Dreamshaper
- 
+To get a sample of dreamshaper's performance, I'll ask the Librarian to render a portrait of himself (/sd you).
+
+### Results Chart:
+```
+|----------------------|-------------|-----------|---------|---------|
+|               model  | contextsize | gpulayers | biotics | /sd you |
+|----------------------|-------------|-----------|---------|---------|
+|   gemma-7b-it.Q4_K_M |        8024 |        18 |     19s |     50s |
+|----------------------|-------------|-----------|---------|---------|
+
+```
+
  ## PROMPT FORMATING
  
  ChatML prompt format:
